@@ -2,8 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from time import sleep
-
 
 # => Setup The browser
 driver = webdriver.Chrome()
@@ -48,7 +46,6 @@ try:
     print(" ➡ TC002: Testing Login with Invalid Username...")
     # navigate to the login page
     driver.get(baseUrl)
-    sleep(5)
 
     # Enter INVALID credentials: wrong username
     login_element("studt", "Password123")
@@ -75,7 +72,6 @@ try:
 
     # navigate to login page
     driver.get(baseUrl)
-    sleep(1)
 
     # Enter VALID username, INVALID password
     login_element("student", "password124")
@@ -84,13 +80,12 @@ try:
     err_msg = WebDriverWait(driver, 6).until(
         EC.visibility_of_element_located((By.ID, "error"))
     )
-
     assert err_msg.is_displayed()
     print("⛔️ Error Message:", err_msg.text)
 
     # Updated assertion
     assert "your password is invalid" in err_msg.text.lower()
-    print("✅✅ TC003: Passes")
+    print("✅✅ TC003: Passed")
 
 except Exception as error:
     print("❌ TC003: Failed", error)
@@ -98,7 +93,7 @@ except Exception as error:
 # -------------------------------------------------
 # ! Test Case 004: Access Protected Page:
 try:
-    print("➡ TC004: Access Protected Page ...")
+    print("➡ TC004: Access Protected Page (not actually protected) ...")
 
     driver.get("https://practicetestautomation.com/logged-in-successfully/")
     success_msg = WebDriverWait(driver, 5).until(

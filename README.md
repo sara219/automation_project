@@ -1,15 +1,22 @@
 # End-to-End Automation Testing
 
-## Objective
+This project contains an end-to-end automation test suite using Selenium WebDriver in Python to validate the login workflow
 
-**End-to-End automation testing for:**
+**Test Target:**
+<https://practicetestautomation.com/practice-test-login/>
 
-- valid and invalid flow
-- Logout functionality
-- Verifying login success and error handling
-- Scraping Udemy course title and headings
+**The test covers:**
 
-### File Structure
+- Valid login
+- Invalid username login
+- Invalid password login
+- Access to a protected page directly
+- Logout
+- Bonus: Scraping course information from a Udemy course page
+
+---
+
+### Project Structure
 
 ```bash
 automation_project/
@@ -20,40 +27,44 @@ automation_project/
 
 ---
 
+### Prerequisites
+
+Ensure you have the following installed and configured:
+
+- Python 3.7+
+- Google Chrome Browser
+- ChromeDriver
+- Python packages
+Install required packages using pip:
+
+```bash
+pip install selenium
+```
+
+---
+
+How to Run
+
+- Open a terminal or in the project directory.
+- Run the automation script:
+
+```bash
+python3 login_test.py
+```
+
+- The script will launch Chrome, run all test cases, print results in the console, and finally close the browser.
+
+**Snippit of result**
+![image](screen.png)
+---
+
 ## 🖇️ Test Cases
 
-### 📎 TC001: Valid Login
-
-| Field               | Value                                                                                |
-| ------------------- | ------------------------------------------------------------------------------------ |
-| **Test Case ID**    | TC\_001                                                                              |
-| **Title**           | Successful login with valid credentials                                              |
-| **Preconditions**   | User is on login page                                                                |
-| **Test Steps**      | 1. Enter username = `student`<br>2. Enter password = `Password123`<br>3. Click Login |
-| **Expected Result** | User sees message "Logged In Successfully" and Logout button                         |
-| **Actual Result**   | "Logged In Successfully" Message and Logout button Appear!                           |
-| **Status**          | Pass                                                                                 |
-
-### 📎 TC002: Login with invalid username, valid password
-
-| Field               | Value                                                                                |
-| ------------------- | ------------------------------------------------------------------------------------ |
-| **Test Case ID**    | TC\_002                                                                              |
-| **Title**           | Login with invalid username, valid password                                          |
-| **Preconditions**   | User is on login page                                                                |
-| **Test Steps**      | 1. Enter username = `studt`<br>2. Enter password = `Password123`<br>3. Click Login   |
-| **Expected Result** | Error message "Your username is invalid!" is displayed                               |
-| **Actual Result**   | "Your username si invalid" Message Appear!                                           |
-| **Status**          | Pass                                                                                 |
-
-### 📎 TC003: Login with valid username, and invalid password
-
-| Field               | Value                                                                                |
-| ------------------- | ------------------------------------------------------------------------------------ |
-| **Test Case ID**    | TC\_002                                                                              |
-| **Title**           | Login with invalid username, valid password                                          |
-| **Preconditions**   | User is on login page                                                                |
-| **Test Steps**      | 1. Enter username = `student`<br>2. Enter password = `password1245`<br>3. Click Login   |
-| **Expected Result** | Error message "Your username is invalid!" is displayed                               |
-| **Actual Result**   | "Your username si invalid" Message Appear!                                           |
-| **Status**          | Pass                                                                                 |
+| **Test Case ID** | **Title**                        | **Preconditions**           | **Test Steps**                                                                                                                                             | **Expected Result**                                                       | **Status**                             |
+| ---------------- | ------------------------------- | --------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------ |
+| **TC001**        | Login with Valid Credentials     | User is on Login Page       | 1. Enter username: `student`<br>2. Enter password: `Password123`<br>3. Click Login                                                                         | User is logged in successfully, sees success message and Logout button    | ✅ Pass                              |
+| **TC002**        | Login with Invalid Username      | User is on Login Page       | 1. Enter username: `studt`<br>2. Enter password: `Password123`<br>3. Click Login                                                                           | Error message appears: "Your username is invalid!"                        | ✅ Pass                              |
+| **TC003**        | Login with Invalid Password      | User is on Login Page       | 1. Enter username: `student`<br>2. Enter password: `password124`<br>3. Click Login                                                                         | Error message appears: "Your password is invalid!"                        | ✅ Pass                              |
+| **TC004**        | Access "Protected" Page Directly | User is NOT Logged In       | 1. Navigate directly to: `/logged-in-successfully/`                                                                                                        | Page loads successfully (Note: not actually protected)                    | ✅ Pass (site not enforcing protection) |
+| **TC005**        | Logout and Confirm Session Ended | User is Logged In           | 1. Login with valid credentials<br>2. Click "Log out"<br>3. Confirm redirect to login page                                                                 | User is redirected to login page after logout                             | ✅ Pass                              |
+| **Bonus**        | Scrape Udemy Course Info         | Udemy Course URL Accessible | 1. Navigate to [Udemy Course Page](https://www.udemy.com/course/selenium-webdriver-and-python/)<br>2. Extract course title & headings<br>3. Save to `.txt` | Course title and section headings are saved in `udemy_course_content.txt` | ✅ Pass                              |
