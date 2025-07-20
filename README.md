@@ -18,7 +18,11 @@ automation_project/
 └── README.md                # Instructions
 ```
 
-## Test Cases
+---
+
+## 🖇️ Test Cases
+
+### 📎 TC001: Valid Login
 
 | Field               | Value                                                                                |
 | ------------------- | ------------------------------------------------------------------------------------ |
@@ -28,4 +32,28 @@ automation_project/
 | **Test Steps**      | 1. Enter username = `student`<br>2. Enter password = `Password123`<br>3. Click Login |
 | **Expected Result** | User sees message "Logged In Successfully" and Logout button                         |
 | **Actual Result**   | "Logged In Successfully" Message and Logout button Appear!                           |
+| **Status**          | Pass                                                                                 |
+
+### 📎 TC002: Login with invalid username, valid password
+
+| Field               | Value                                                                                |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| **Test Case ID**    | TC\_002                                                                              |
+| **Title**           | Login with invalid username, valid password                                          |
+| **Preconditions**   | User is on login page                                                                |
+| **Test Steps**      | 1. Enter username = `studt`<br>2. Enter password = `Password123`<br>3. Click Login   |
+| **Expected Result** | Error message "Your username is invalid!" is displayed                               |
+| **Actual Result**   | "Your username si invalid" Message Appear!                                           |
+| **Status**          | Pass                                                                                 |
+
+### 📎 TC003: Login with valid username, and invalid password
+
+| Field               | Value                                                                                |
+| ------------------- | ------------------------------------------------------------------------------------ |
+| **Test Case ID**    | TC\_002                                                                              |
+| **Title**           | Login with invalid username, valid password                                          |
+| **Preconditions**   | User is on login page                                                                |
+| **Test Steps**      | 1. Enter username = `student`<br>2. Enter password = `password1245`<br>3. Click Login   |
+| **Expected Result** | Error message "Your username is invalid!" is displayed                               |
+| **Actual Result**   | "Your username si invalid" Message Appear!                                           |
 | **Status**          | Pass                                                                                 |
