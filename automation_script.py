@@ -39,6 +39,7 @@ try:
 except Exception as error:
     # TC001: Fail
     print("❌ TC001: Failed", error)
+    driver.quit()
 
 # -------------------------------------------------
 # ! Test Case 002: Login with invalid Username:
@@ -64,6 +65,7 @@ try:
 except Exception as error:
     # TC002: Fail
     print("❌ TC002: Failed", error)
+    driver.quit()
 
 # -------------------------------------------------
 # ! Test Case 003: Login with invalid Password:
@@ -89,6 +91,7 @@ try:
 
 except Exception as error:
     print("❌ TC003: Failed", error)
+    driver.quit()
 
 # -------------------------------------------------
 # ! Test Case 004: Access Protected Page:
@@ -104,6 +107,8 @@ try:
 
 except Exception as error:
     print("❌ TC004: Failed", error)
+    driver.quit()
+
 
 # -------------------------------------------------
 # ! Test Case 005: Logout:
@@ -131,6 +136,7 @@ try:
 
 except Exception as error:
     print("❌ TC005: Failed", error)
+    driver.quit()
 
-driver.quit()
+
 print("Browser closed. Test completed.")

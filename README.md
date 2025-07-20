@@ -45,9 +45,6 @@ python3 login_test.py
 ```
 - The script will launch Chrome, run all test cases, print results in the console, and finally close the browser.
 ---
-**Result**
-
-![image](screen.png)
 ---
 
 ## 🖇️ Test Cases
