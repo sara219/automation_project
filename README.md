@@ -1,12 +1,10 @@
 # End-to-End Automation Testing
-
 This project contains an end-to-end automation test suite using Selenium WebDriver in Python to validate the login workflow
 
 **Test Target:**
 <https://practicetestautomation.com/practice-test-login/>
 
 **The test covers:**
-
 - Valid login
 - Invalid username login
 - Invalid password login
@@ -17,7 +15,6 @@ This project contains an end-to-end automation test suite using Selenium WebDriv
 ---
 
 ### Project Structure
-
 ```bash
 automation_project/
 ├── automation_script.py     # Main script
@@ -28,15 +25,12 @@ automation_project/
 ---
 
 ### Prerequisites
-
 Ensure you have the following installed and configured:
-
 - Python 3.7+
 - Google Chrome Browser
 - ChromeDriver
 - Python packages
 Install required packages using pip:
-
 ```bash
 pip install selenium
 ```
@@ -44,17 +38,15 @@ pip install selenium
 ---
 
 How to Run
-
 - Open a terminal or in the project directory.
 - Run the automation script:
-
 ```bash
 python3 login_test.py
 ```
-
 - The script will launch Chrome, run all test cases, print results in the console, and finally close the browser.
 
-**Snippit of result**
+**Snippit of Result**
+
 ![image](screen.png)
 ---
 
