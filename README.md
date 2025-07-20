@@ -22,10 +22,10 @@ automation_project/
 
 | Field               | Value                                                                                |
 | ------------------- | ------------------------------------------------------------------------------------ |
-| **Test Case ID**    | TC\_001                                                                |
+| **Test Case ID**    | TC\_001                                                                              |
 | **Title**           | Successful login with valid credentials                                              |
 | **Preconditions**   | User is on login page                                                                |
 | **Test Steps**      | 1. Enter username = `student`<br>2. Enter password = `Password123`<br>3. Click Login |
 | **Expected Result** | User sees message "Logged In Successfully" and Logout button                         |
-| **Actual Result**   | "Logged In Successfully" message and Logout button appear!                                                 |                                      |
-| **Status**          | Pass                                                                         |
+| **Actual Result**   | "Logged In Successfully" Message and Logout button Appear!                           |
+| **Status**          | Pass                                                                                 |
