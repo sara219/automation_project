@@ -39,12 +39,16 @@ pip install selenium
 
 How to Run
 - Open a terminal or in the project directory.
-- Run the automation script:
+- Run the login script:
 ```bash
-python3 login_test.py
+python3 automation_script.py 
 ```
 - The script will launch Chrome, run all test cases, print results in the console, and finally close the browser.
----
+- Run the Scraping script:
+```bash
+python3 scaping_tc.py 
+```
+- Check the scraped_course.txt file.
 ---
 
 ## 🖇️ Test Cases
